@@ -1,10 +1,10 @@
 from tkinter import filedialog
 
 def function_path(entry):
-    path_original = filedialog.askopenfilename(title="Selecione o caminho da pasta")
+    path = filedialog.askdirectory(title="Selecione o caminho da pasta")
 
-    if path_original:
+    if path:
         entry.delete(0,'end')
-        entry.insert(0, path_original)
+        entry.insert(0, path)
     
-    return path_original
+    return path
