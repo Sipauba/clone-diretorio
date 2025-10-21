@@ -2,6 +2,7 @@ import tkinter as tk
 from frame_entry_original import *
 from frame_entry_clone import *
 from button_executar import *
+from function_schedule import function_schedule
 
 root = tk.Tk()
 root.title('Clona diretório')
@@ -19,5 +20,7 @@ frame_entry_original(root)
 frame_entry_clone(root)
 
 button_executar(root)
+
+function_schedule()
 
 root.mainloop()

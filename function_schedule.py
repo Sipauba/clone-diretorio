@@ -1,16 +1,15 @@
 import schedule
 import time
 import threading
-from function_copy import function_copy
-from tkinter import messagebox
+from function_check_difference import function_check_difference
 
-def start_schedule(horario="23:00"):
+def function_schedule(intervalo_horas=1):
     """
-    Agenda a execução automática da cópia no horário especificado (HH:MM).
+    Agenda a execução automática da cópia a cada X horas.
     Mantém o Tkinter livre (roda em thread separada).
     """
-    schedule.clear()  # limpa agendamentos anteriores
-    schedule.every().day.at(horario).do(function_copy)
+    schedule.clear()
+    schedule.every(intervalo_horas).minutes.do(function_check_difference)
 
     def run_schedule():
         while True:
@@ -19,4 +18,3 @@ def start_schedule(horario="23:00"):
 
     thread = threading.Thread(target=run_schedule, daemon=True)
     thread.start()
-    messagebox.showinfo('Agendado', f"Cópia automática configurada para {horario} todos os dias.")

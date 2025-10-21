@@ -1,7 +1,12 @@
 from tkinter import Entry, Frame, Label, Button, SOLID
 from function_path import *
 
+entry_clone = None
+
 def frame_entry_clone (root):
+
+    global entry_clone
+
     frame_entry_clone = Frame(root,
                                relief = SOLID,
                                bd = 1)

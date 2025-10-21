@@ -1,7 +1,12 @@
 from tkinter import Entry, Frame, Label, Button, SOLID
 from function_path import *
 
+entry_original = None
+
 def frame_entry_original (root):
+
+    global entry_original
+
     frame_entry_original = Frame(root,
                                relief = SOLID,
                                bd = 1)

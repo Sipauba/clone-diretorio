@@ -6,6 +6,9 @@ from tkinter import messagebox
 
 def function_copy(path_original, path_clone):
 
+    from frame_entry_clone import entry_clone
+    from frame_entry_original import entry_original
+
     path_original = entry_original.get()
     path_clone = entry_clone.get()
 
